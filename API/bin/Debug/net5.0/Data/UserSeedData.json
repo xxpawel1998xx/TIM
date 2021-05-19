@@ -1,0 +1,17 @@
+[
+    {
+        "UserName": "lisa",
+        "City": "Warszawa"
+        
+    },
+    {
+        "UserName": "piotr",
+        "City": "Pulawy"
+        
+    },
+    {
+        "UserName": "pawel",
+        "City": "Krasnik"
+       
+    }
+]
