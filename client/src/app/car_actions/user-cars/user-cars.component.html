@@ -1,0 +1,28 @@
+<div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-6">
+    <h2 class="mb-5">Zamówione Auto: </h2>
+    <div *ngFor="let car of cars" >
+        <div *ngIf="car.appUserId == user.id" class="card mb-3" style="max-width: 600px;">
+            <div class="row g-0" >
+              <div class="col-md-5">
+                <img src="{{car?.carPhotoUrl}}" alt="..." style="width:250px; height: 250px;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">{{car?.car}} {{car?.brand}}</h5>
+                  <h6 class="card-text">Rodzaj paliwa: {{car?.fuelType}}</h6>
+                  <p class="card-text">Rok produkcji: {{car?.year}} r.</p>
+                  <p class="card-text ">Przebieg: {{car?.mileage}} km</p>
+                  <h4 class="card-text ">Cena: {{car?.price}} zł  </h4>
+                  <h5 class="card-text text-right"><button class="btn btn-danger" (click)="UnselectCar(car.id)">Anuluj rezerwacje </button></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+          
+    </div>
+    
+    <div class="col-3"></div>
+    </div>

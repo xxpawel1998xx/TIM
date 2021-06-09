@@ -1,0 +1,110 @@
+<div class="row mt-5" >
+    <div class="col-2"></div>
+    <div class="col-4">
+    <h1 class="mb-3">Dodane Samochody :</h1>
+    <div *ngFor="let car of cars" >
+        <div  class="card mb-5" style="max-width: 700px;">
+            <div class="row g-0" >
+              <div class="col-md-5">
+                <img src="{{car?.carPhotoUrl}}" alt="..." style="width:250px; height: 250px;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">{{car?.car}} {{car?.brand}}</h5>
+                  <h6 class="card-text">Rodzaj paliwa: {{car?.fuelType}}</h6>
+                  <p class="card-text">Rok produkcji: {{car?.year}} r.</p>
+                  <p class="card-text ">Przebieg: {{car?.mileage}} km</p>
+                  <h4 class="card-text ">Cena: {{car?.price}} zł  </h4>
+                  <h5 class="card-text text-right "><button class="btn btn-primary mr-2 " [routerLink]="['/update-car/', this.car?.id]" routerLinkActive="router-link-active"  >Zaktualizuj Auto </button>
+                    <button class="btn btn-danger " (click)="delCar(car.id)" >Usuń auto </button></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="col-1"></div>
+    <div class="col-5">
+        <h1>Dodaj samochód: </h1>
+        <div class="card mb-5 " style="max-width: 600px;">
+            <div class="row " >
+                <div class="card-body">
+                    <form   #AddingForm="ngForm" class="formularz  ml-5 mr-5 mt-2 mt-md-0 " >
+                       <div class="d-flex" >
+                        <b class="ml-2 mr-2">Marka:</b>
+                        <input 
+                        name="car"
+                        [(ngModel)]="model.car"
+                        class="form-control d  " 
+                        (keyup)="onKey1($event)"
+                        type="text" placeholder="Marka Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Model:</b>
+                        <input 
+                        name="brand"
+                        [(ngModel)]="model.brand"
+                        class="form-control d  " 
+                        (keyup)="onKey2($event)"
+                        type="text" placeholder="Model Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Przebieg:</b>
+                        <input 
+                        name="mileage"
+                        [(ngModel)]="model.mileage"
+                        (keyup)="onKey3($event)"
+                        class="form-control d  " 
+                        type="number" placeholder="Przebieg Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Paliwo:</b>
+                        <input 
+                        name="fuelType"
+                        [(ngModel)]="model.fuelType"
+                        (keyup)="onKey4($event)"
+                        class="form-control d  " 
+                        type="text" placeholder="Rodzaj Paliwa" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Rok:</b>
+                        <input 
+                        name="year"
+                        [(ngModel)]="model.year"
+                        (keyup)="onKey5($event)"
+                        class="form-control d " 
+                        type="number" placeholder="Rok Produkcji Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Cena:</b>
+                        <input 
+                        name="price"
+                        [(ngModel)]="model.price"
+                        (keyup)="onKey6($event)"
+                        class="form-control d  " 
+                        type="number" placeholder="Cena Pojazdu" >
+                    </div> 
+                <div ng2FileDrop
+                 [ngClass]="{'nv-file-over': hasBaseDropzoneOver}"
+                 (fileOver)="fileOverBase($event)"
+                 [uploader]="uploader"
+                 class="card bg-faded p-3 text-center mb-3 my-drop-zone">
+                 <i class="fa fa-upload fa-3x"></i>
+                Dodaj fotke auta
+                <input type="file" ng2FileSelect [uploader]="uploader" />
+            </div>
+                        <button type="button" class="btn btn-success btn-s "
+                        (click)="uploader.uploadAll()" 
+                        [disabled]="!uploader.getNotUploadedItems().length">
+                     DODAJ SAMOCHÓD
+                </button>
+                      </form>
+                </div>
+             
+            </div>
+          </div>
+        
+       
+
+    </div>
+    </div>

@@ -1,0 +1,73 @@
+<div class="row mt-5">
+    <div class="col-3">
+        <!-- {{car.id}}
+        {{car.car}} -->
+    </div>
+    
+  
+    <div class="col-6">
+        <h1>Aktualizuj samochód: </h1>
+        <div class="card mb-5" style="max-width: 500px;">
+            <div class="row " >
+                <div class="card-body">
+                    <form  #AddingForm="ngForm" class="formularz   mt-2 mt-md-0 " >
+                       <div class="d-flex" >
+                        <b class="ml-2 mr-2">Marka:</b>
+                        <input 
+                        name="car"
+                        [(ngModel)]="car.car"
+                        class="form-control d  " 
+                        type="text"  placeholder="Marka Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Model:</b>
+                        <input 
+                        name="brand"
+                        [(ngModel)]="car.brand"
+                        class="form-control d  " 
+                        type="text" placeholder="Model Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Przebieg:</b>
+                        <input 
+                        name="mileage"
+                        [(ngModel)]="car.mileage"
+                        class="form-control d  " 
+                        type="text" placeholder="Przebieg Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Paliwo:</b>
+                        <input 
+                        name="fuelType"
+                        [(ngModel)]="car.fuelType"
+                        class="form-control d  " 
+                        type="text" placeholder="Rodzaj Paliwa" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Rok:</b>
+                        <input 
+                        name="year"
+                        [(ngModel)]="car.year"
+                        class="form-control d " 
+                        type="text" placeholder="Rok Produkcji Pojazdu" >
+                    </div> 
+                    <div class="d-flex">
+                        <b class="ml-2 mr-2">Cena:</b>
+                        <input 
+                        name="price"
+                        [(ngModel)]="car.price"
+                        class="form-control d  " 
+                        type="text" placeholder="Cena Pojazdu" >
+                    </div> 
+                        <button class="btn btn-success "  type="submit" (click)="updateCar(this.car?.id)">Dodaj Auto</button> 
+                        
+                      </form>
+                </div>
+             
+            </div>
+          </div>
+        
+       
+          <div class="col-3"></div>
+    </div>
+    </div>

@@ -1,0 +1,30 @@
+<div class="row mt-5">
+    <div class="col-3"></div>
+    <div class="col-6">
+    <h1 class="mb-5">Wypożycznone samochody</h1>
+    <ng-container *ngFor="let client of clients">
+    <div *ngFor="let car of cars" >
+        <div *ngIf="car.isTaken == true && car.appUserId == client.id" class="card mb-5" style="max-width: 800px;">
+            <div class="row g-0" >
+              <div class="col-md-5">
+                <img src="{{car?.carPhotoUrl}}" alt="..." style="width:350px; height: 300px;">
+              </div>
+              <div class="col-md-7">
+                <div class="card-body">
+                  <h5 class="card-title">{{car?.car}} {{car?.brand}}</h5>
+                  <h6 class="card-text">Rodzaj paliwa: {{car?.fuelType}}</h6>
+                  <p class="card-text">Rok produkcji: {{car?.year}} r.</p>
+                  <p class="card-text ">Przebieg: {{car?.mileage}} km</p>
+                  <h4 class="card-text ">Cena: {{car?.price}} zł  </h4>
+                  <h5 class="card-text ">Zamówione przez użytkownika: {{client.username | uppercase}} </h5>
+                  <h5 class="card-text ">Z miasta: {{client.city}} </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </ng-container>
+    </div>
+    
+    <div class="col-3"></div>
+    </div>

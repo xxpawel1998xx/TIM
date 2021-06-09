@@ -1,0 +1,28 @@
+.dropdown-toggle, .dropdown-item, a{
+    cursor: pointer;
+    }
+    
+    
+    .navbar{
+    background-color: whitesmoke;
+    padding-bottom: 10px;
+    }
+
+    .navbar-brand{
+        margin-left: 5rem;
+
+
+    }
+    .nav-item{
+        margin-left: 2rem;
+        
+    }
+    .user-details{
+      display: inline-flex;
+        margin-right: 5rem;
+
+    }
+
+    .form-inline{
+        margin-right: 16rem;
+    }
