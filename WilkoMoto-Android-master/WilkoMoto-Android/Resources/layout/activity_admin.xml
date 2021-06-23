@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/allCarsBtn"
+        android:text="Wszystkie auta"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addNewCarBtn"
+        android:text="Dodaj nowy samochód"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/takenCarsBtn"
+        android:text="Zamówione samochody"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutBtn"
+        android:text="Wyloguj"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"/>
+</LinearLayout>
